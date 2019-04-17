@@ -1,0 +1,92 @@
+div {
+    background: beige;
+    width: 800px;
+    height: 380px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -400px;
+    margin-top: -190px;
+    padding: 50px;                     /*задает отступ до меню внутри рамки*/
+    border: 4px double black;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    float: left;
+    padding: 0 22px;                   /*растягивает меню по ширине блока с рамкой (ячейки по ширине текста)*/
+    margin-bottom: 50px;               /*задает отступ между меню снизу*/
+}
+
+ul a {
+    display: block;
+    color: black;
+    font-family: sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+br {
+    clear: both;                       /*выводит второе и третье меню с новой строки*/
+}
+
+.menu1 li {
+    background: url('checked.png') no-repeat;
+    padding-top: 30px;                 /*задает отсут до текста ссылки от верха ячейки (без учета иконки)*/
+    background-position: top center;   /*центрирует иконку фона заданную картинкой*/
+}
+
+.menu2 li:before {
+    content: "";
+    border-top: 8px solid transparent;
+    border-left: 8px solid black;
+    border-right: 8px solid black;
+    border-bottom: 8px solid transparent;
+    position: relative;
+    width: 0px;
+    height: 0px;
+    margin: 0 auto;                    /*центрирует блочный элемент, если заданы его размеры*/ 
+    display: block;                    /*размещает иконку в отдельной строке от основного текста*/
+}
+
+.menu2 a {
+    padding-top: 20px;                 /*задает растояние между текстом ссылки и иконкой*/
+}
+
+.menu3 li::before {
+    content: "★";
+    font-size: 25px;
+    text-align: center;                /*центрирует иконку, заданную как текстовый символ*/
+    color: blue;
+    display: block;                    /*размещает иконку в отдельной строке от основного текста*/
+}
+
+.menu3 a {
+    padding-top: 10px;                 /*задает растояние между текстом ссылки и иконкой*/
+}
+
+.menu1 li:hover {
+    background: url('checked-hover.png') no-repeat;
+    padding-top: 30px;
+    background-position: top center;
+}
+
+.menu2 li:hover::before {
+    content: "";
+    border-top: 8px solid transparent;
+    border-left: 8px solid orange;
+    border-right: 8px solid orange;
+    border-bottom: 8px solid transparent;
+}
+
+.menu3 li:hover::before {
+    color: black;
+}
